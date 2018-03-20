@@ -53,8 +53,10 @@ End Sub
 
 Private Sub UserForm_QueryClose(Cancel As Integer, CloseMode As Integer)
 
-'    msg = "Now Unloading " & Me.Caption
-'    MsgBox prompt:=msg, Title:="QueryClose Event"
+   If CloseMode = 0 Then
+        Cancel = True
+        MsgBox "The X is disabled, please use a button on the form.", vbCritical
+    End If
 
 End Sub
 
